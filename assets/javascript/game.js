@@ -23,7 +23,7 @@
 var wins = 0;
 var losses = 0;
 var playerScore = 0;
-var randomNum = Math.floor(Math.random() + (120-19) + 19);
+var randomNum = Math.floor(Math.random() * (120-19) + 19);
 
 console.log(randomNum)
 
@@ -35,8 +35,9 @@ console.log(randomNum)
 
 $(document).ready(function(){
 
-    // jQuery methods go here...
-  
+// When the game starts assign a random number to randomNum div
+  var randomNumDiv = document.getElementById('randomNum');
+    randomNumDiv.textContent = randomNum;
 
 
 
