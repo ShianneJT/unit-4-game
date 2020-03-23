@@ -18,47 +18,95 @@
 $(document).ready(function(){
 
 // Variables
-var randomNum = Math.floor(Math.random() * (120-19) + 19);
-var objOne = Math.ceil(Math.random() * 12);
-var objTwo = Math.ceil(Math.random() * 12);;
-var objThree = Math.ceil(Math.random() * 12);
-var objFour = Math.ceil(Math.random() * 12);
-var wins = 0;
-var losses = 0;
-var playerScore = 0;
+  var targetNum = 0
+  var leaf = 0
+  var mushroom = 0
+  var flower = 0
+  var star = 0
 
-console.log(`Random Number: ${randomNum}`);
-console.log(`Object One: ${objOne}`);
-console.log(`Object Two: ${objTwo}`);
-console.log(`Object Three: ${objThree}`);
-console.log(`Object Four: ${objFour}`);
+  // Game stats
+  var playerScore = 0
+  var wins = 0;
+  var losses = 0;
 
+  // Images
+  $("#powerUp1").attr("src", "assets/images/mario01.png")
+  $("#powerUp2").attr("src", "assets/images/mario02.png")
+  $("#powerUp3").attr("src", "assets/images/mario03.png")
+  $("#powerUp4").attr("src", "assets/images/mario04.png")
 
+// Assigns a random number between 19 and 120
+  targetNum = Math.floor(Math.random() * (120-19) + 19)
+  $('#targetNum').html(targetNum);
+  console.log(`Target number ${targetNum}`);
 
-  $('#one').on('click', function() {
-    playerScore = objOne
-    $('#playerScore').val(objOne).text(objOne);
-    console.log(playerScore)
-  })
+// Assigns a hidden value between 1 and 12 to each power up 
+  mushroom = Math.floor(Math.random() * 11 + 1);
+  flower = Math.floor(Math.random() * 11 + 1);
+    if (flower === mushroom) {
+      flower += 1;
+    }  
+  leaf = Math.floor(Math.random() * 11 + 1);
+    if (leaf === mushroom || leaf === flower) {
+      leaf += 2;
+    }
+  star = Math.floor(Math.random() * 11 + 1);
+    if (star === mushroom || star === flower || star === leaf) {
+      star += 3;
+    }
 
-  $('#two').on('click', function() {
-    $('playerScore').text(objTwo);
-      console.log(objTwo);
-  })
+// For testing --- REMOVE ~~~~~~~~~~~~~!!
+    console.log(`mushroom: ${mushroom}`)  
+    console.log(`flower: ${flower}`)
+    console.log(`leaf: ${leaf}`) 
+    console.log(`star: ${star}`)
 
-  $('#three').on('click', function() {
-    $('playerScore').text(objThree);
-      console.log(objThree);
-  })
-
-  $('#four').on('click', function() {
-    $('playerScore').text(objFour);
-      console.log(objFour);
-  })
-
-
-
+// Game starts when the user clicks an image, adding the value of the object to the playerScore
+// Mushroom
+$('powerUp1').click(function() {
+  playerScore = playerScore + mushroom
+    $('#currentScore');
 })
+
+// Flower
+$('powerUp2').click(function() {
+  playerScore = playerScore + flower
+    $('#currentScore');
+})
+
+// Leaf
+$('powerUp3').click(function() {
+  playerScore = playerScore + leaf
+    $('#currentScore');
+})
+
+// Star
+$('powerUp4').click(function() {
+  playerScore = playerScore + star
+    $('#currentScore');
+})
+
+
+
+
+
+
+  $('#playerScore').html(playerScore);
+
+
+
+
+
+  
+
+
+
+
+}); // End of: $(document).ready(function()
+
+
+
+
 
 // reset game
 // clears players score
@@ -87,3 +135,48 @@ console.log(`Object Four: ${objFour}`);
 // alert player that they lost
 // add 1 to losses
 // restart game
+
+
+
+
+
+
+
+
+
+
+// var randomNum = Math.floor(Math.random() * (120-19) + 19);
+// var objOne = Math.ceil(Math.random() * 12);
+// var objTwo = Math.ceil(Math.random() * 12);
+// var objThree = Math.ceil(Math.random() * 12);
+// var objFour = Math.ceil(Math.random() * 12);
+
+
+// console.log(`Random Number: ${randomNum}`);
+// console.log(`Object One: ${objOne}`);
+// console.log(`Object Two: ${objTwo}`);
+// console.log(`Object Three: ${objThree}`);
+// console.log(`Object Four: ${objFour}`);
+
+
+
+
+
+  // $('#two').on('click', function() {
+  //   $('playerScore').text(objTwo);
+  //     console.log(objTwo);
+  // })
+
+  // $('#three').on('click', function() {
+  //   $('playerScore').text(objThree);
+  //     console.log(objThree);
+  // })
+
+  // $('#four').on('click', function() {
+  //   $('playerScore').text(objFour);
+  //     console.log(objFour);
+  // })
+
+
+
+

@@ -1,0 +1,21 @@
+
+html { 
+    /* background: url(../images/mariobg.png) no-repeat center center fixed;  */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+  }
+
+
+img {
+    width: 150px;
+}
+
+container {
+    width: 90%;
+}
+
+row {
+    justify-content: space-evenly;
+}
