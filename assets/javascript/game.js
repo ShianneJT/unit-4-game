@@ -25,7 +25,7 @@ $(document).ready(function(){
   var star = 0
 
   // Game stats
-  var playerScore = 0
+  var playerScore = '';
   var wins = 0;
   var losses = 0;
 
@@ -63,35 +63,52 @@ $(document).ready(function(){
 
 // Game starts when the user clicks an image, adding the value of the object to the playerScore
 // Mushroom
-$('powerUp1').click(function() {
+$('#powerUp1').click(function() {
   playerScore = playerScore + mushroom
-    $('#currentScore');
+  playerScore = parseInt(playerScore);
+    $('#playerScoreDiv').html(playerScore);
 })
 
 // Flower
-$('powerUp2').click(function() {
+$('#powerUp2').click(function() {
   playerScore = playerScore + flower
-    $('#currentScore');
+    $('#playerScoreDiv').html(playerScore);
 })
 
 // Leaf
-$('powerUp3').click(function() {
+$('#powerUp3').click(function() {
   playerScore = playerScore + leaf
-    $('#currentScore');
+    $('#playerScoreDiv').html(playerScore);
 })
 
 // Star
-$('powerUp4').click(function() {
+$('#powerUp4').click(function() {
   playerScore = playerScore + star
-    $('#currentScore');
+    $('#playerScoreDiv').html(playerScore);
 })
 
+checkWin();
 
 
+// Win Condition
+// When playerScore === randomNum
+// Alert player that they won, woo!
+// add 1 to wins
+// restart game
+
+function checkWin () {
+  if (playerScore === targetNum) {
+    console.log('Winner!')
+}
 
 
+}
 
-  $('#playerScore').html(playerScore);
+if (playerScore > targetNum) {
+  console.log('Loser! :(')
+}
+
+
 
 
 
@@ -124,11 +141,7 @@ $('powerUp4').click(function() {
 // Game start
 // Clicking a button adds its value to the player score
 
-// Win Condition
-// When playerScore === randomNum
-// Alert player that they won, woo!
-// add 1 to wins
-// restart game
+
 
 // Loss Condition
 // If player score > randomNum

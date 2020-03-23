@@ -6,49 +6,35 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> 
     <title>Power Up Collector</title>
 </head>
 <body>
     <header>
-
+        <div class="container">
+            <h1>Power-Up Collector!</h1>
+        </div>
     </header>
 
-    <div class="container rounded"> blah blah stuff here 
-        Current score: <div id='currentScore'>
-
+    <div class="container rounded">
+        <div class="row"> <!-- Target and Player score-->
+            <div class="col-md-4" id="targetNumDiv"></div>
+            <div class="col-md-4" id="playerScoreDiv"></div>
+            <div class="col-md-4">
+                <div class="row" id="wins"></div>
+                <div class="row" id="losses"></div>
+            </div>
         </div>
-
-
-
-
-    </div>
-
-    <div class="container">
-        <div class="row"> 
-            <div class="col-lg-3">                
-                <img id="powerUp1" src="">
-            </div>
-            <div class="col-lg-3">
-                <img id="powerUp2" src="">                 
-            </div>
-            <div class="col-lg-3">
-                <img id="powerUp3" src="">
-            </div>
-            <div class="col-lg-3">
-                <img id="powerUp4" src="">
-            </div>
+        <div class="row"> <!--Power-Ups -->
+            <div class="col-md-3"><img id="powerUp1" src=""></div>
+            <div class="col-md-3"><img id="powerUp2" src=""></div>
+            <div class="col-md-3"><img id="powerUp3" src=""></div>
+            <div class="col-md-3"><img id="powerUp4" src=""></div>
         </div>
     </div>
 
 
-    <!-- <div class="container">
-        <div class="row"></div>
-        Target Number: <div id="targetNum"></div>
-         Wins: <div id="wins"></div>
-        Losses: <div id="losses"></div>  
-        Current score: <div id="currentScore"></div> 
 
-    </div>  -->
 
     <footer>
         
