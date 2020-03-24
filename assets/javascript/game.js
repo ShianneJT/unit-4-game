@@ -1,21 +1,11 @@
-// There will be four crystals displayed as buttons on the page.
-// The player will be shown a random number at the start of the game.
-// When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-// Your game will hide this amount until the player clicks a crystal.
-// When they do click one, update the player's score counter.
-// The player wins if their total score matches the random number from the beginning of the game.
-// The player loses if their score goes above the random number.
-// The game restarts whenever the player wins or loses.
-// When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, 
-// the user's score (and score counter) will reset to zero.
-// The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
-
-// var random number at the start of the game between 19 and 120
-// Four buttons that need to have a random value between 1-12
-// Players score is hidden until they click a button
-// score displays in the score box
 $(document).ready(function(){
+
+// Images
+$("#powerUp1").attr("src", "assets/images/mario01.png")
+$("#powerUp2").attr("src", "assets/images/mario02.png")
+$("#powerUp3").attr("src", "assets/images/mario03.png")
+$("#powerUp4").attr("src", "assets/images/mario04.png")
 
 // Variables
   var targetNum = 0
@@ -25,19 +15,15 @@ $(document).ready(function(){
   var star = 0
 
   // Game stats
-  var playerScore = '';
+  var playerScore = 0;
   var wins = 0;
   var losses = 0;
 
-  // Images
-  $("#powerUp1").attr("src", "assets/images/mario01.png")
-  $("#powerUp2").attr("src", "assets/images/mario02.png")
-  $("#powerUp3").attr("src", "assets/images/mario03.png")
-  $("#powerUp4").attr("src", "assets/images/mario04.png")
+  
 
 // Assigns a random number between 19 and 120
   targetNum = Math.floor(Math.random() * (120-19) + 19)
-  $('#targetNum').html(targetNum);
+  $('#targetNumDiv').html(targetNum);
   console.log(`Target number ${targetNum}`);
 
 // Assigns a hidden value between 1 and 12 to each power up 
@@ -67,28 +53,29 @@ $('#powerUp1').click(function() {
   playerScore = playerScore + mushroom
   playerScore = parseInt(playerScore);
     $('#playerScoreDiv').html(playerScore);
+    checkWin()
 })
 
 // Flower
 $('#powerUp2').click(function() {
   playerScore = playerScore + flower
     $('#playerScoreDiv').html(playerScore);
+    checkWin()
 })
 
 // Leaf
 $('#powerUp3').click(function() {
   playerScore = playerScore + leaf
     $('#playerScoreDiv').html(playerScore);
+    checkWin()
 })
 
 // Star
 $('#powerUp4').click(function() {
   playerScore = playerScore + star
     $('#playerScoreDiv').html(playerScore);
+    checkWin()
 })
-
-checkWin();
-
 
 // Win Condition
 // When playerScore === randomNum
@@ -96,30 +83,36 @@ checkWin();
 // add 1 to wins
 // restart game
 
-function checkWin () {
+
+
+function checkWin() {
   if (playerScore === targetNum) {
-    console.log('Winner!')
+    alert('You won!');
+    wins++;
+    $('#wins').text(wins);
+      newGame();
+  } else if (playerScore > targetNum) {
+    alert('Game Over!');
+    losses++;
+    $('#losses').text(losses);
+      newGame()
+  }
 }
 
+function newGame() {
+  $('#playerScoreDiv').empty();
 
-}
-
-if (playerScore > targetNum) {
-  console.log('Loser! :(')
-}
-
-
-
-
-
+  var leaf = 0
+  var mushroom = 0
+  var flower = 0
+  var star = 0
+  var playerScore = 0;
+};    
 
 
-  
+}) // End of $(document).ready(function()
 
 
-
-
-}); // End of: $(document).ready(function()
 
 
 
