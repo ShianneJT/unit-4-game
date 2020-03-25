@@ -27,7 +27,7 @@ $(document).ready(function(){
     playerScore = 0;
     // Assigns a random number between 19 and 120
     targetNum = Math.floor(Math.random() * (120-19) + 19)
-    $('#targetNumDiv').html(targetNum);
+    $('#targetNumDiv').html(`Target score: ${targetNum}`);
     console.log(`Target number ${targetNum}`);
     
     // Assigns a hidden value between 1 and 12 to each power up 
@@ -60,28 +60,28 @@ $(document).ready(function(){
   $('#powerUp1').click(function() {
     playerScore = playerScore + mushroom
     playerScore = parseInt(playerScore);
-      $('#playerScoreDiv').html(playerScore);
+      $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
   
 // Flower
   $('#powerUp2').click(function() {
     playerScore = playerScore + flower
-      $('#playerScoreDiv').html(playerScore);
+      $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
   
 // Leaf
   $('#powerUp3').click(function() {
     playerScore = playerScore + leaf
-      $('#playerScoreDiv').html(playerScore);
+      $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
   
 // Star
   $('#powerUp4').click(function() {
     playerScore = playerScore + star
-      $('#playerScoreDiv').html(playerScore);
+      $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
   
@@ -90,12 +90,12 @@ $(document).ready(function(){
     if (playerScore === targetNum) {
       alert('You won!');
       wins++;
-      $('#wins').text(wins);
+      $('#wins').text(`Wins: ${wins}`);
         newGame();
     } else if (playerScore > targetNum) {
       alert('You lose. Game Over!');
       losses++;
-      $('#losses').text(losses);
+      $('#losses').text(`Losses: ${losses}`);
         newGame()
     }
   } // End of checkWin() function 

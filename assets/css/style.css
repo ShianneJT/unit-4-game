@@ -1,25 +1,56 @@
-
-html { 
-    /* background: url(../images/mariobg.png) no-repeat center center fixed;  */
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
+* {
+    box-sizing: border-box;
   }
 
 body {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 16px;
+    background: url(../images/mariobg.png) no-repeat center fixed;  
+    background-size: cover;
 }
 
+.header {
+    width: 90%;
+    margin: 15px auto 60px auto;
+    padding: 20px;
+    border: 6px solid rgb(28, 27, 27);
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.container {
+    border: 6px solid rgb(28, 27, 27);
+    background-color: rgb(254, 204, 197,);
+}
+
+#game {
+    background-color: #feccc5;
+    padding: 15px 15px 15px 60px;
+    border-bottom: 5px solid rgb(28, 27, 27);
+}
+
+.row {
+    background-color: white;
+}
 
 img {
     width: 150px;
 }
 
-container {
-    width: 90%;
+#targetNumDiv, #playerScoreDiv {
+    text-align: left;
+    padding: 20px;
+    height: 60px;
 }
 
-row {
-    justify-content: space-evenly;
+#wins, #losses {
+    text-align: left;
+    height: 30px;
+}
+
+#intro {
+    border-top: 5px solid rgb(28, 27, 27);
+    text-align: justify;
+    padding: 10px;
 }
