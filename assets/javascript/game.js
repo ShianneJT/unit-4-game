@@ -17,9 +17,7 @@ $(document).ready(function(){
     // Game stats
     var playerScore = 0;
     var wins = 0;
-    var losses = 0;   
-    
-    // added from the bottom
+    var losses = 0;
 
   function newGame() {
     // Empties div that contains the players score
@@ -30,7 +28,7 @@ $(document).ready(function(){
     $('#targetNumDiv').html(`Target score: ${targetNum}`);
     console.log(`Target number ${targetNum}`);
     
-    // Assigns a hidden value between 1 and 12 to each power up 
+    // Assigns a hidden value between 1 and 12 to each power up
     mushroom = Math.floor(Math.random() * 11 + 1);
     flower = Math.floor(Math.random() * 11 + 1);
       if (flower === mushroom) {
@@ -45,14 +43,14 @@ $(document).ready(function(){
         star += 2;
       }
 
-    // For testing --- REMOVE ~~~~~~~~~~~~~!!
-    console.log(`mushroom: ${mushroom}`)  
+    /* For testing/cheating
+    console.log(`mushroom: ${mushroom}`)
     console.log(`flower: ${flower}`)
-    console.log(`leaf: ${leaf}`) 
+    console.log(`leaf: ${leaf}`)
     console.log(`star: ${star}`)
-    console.log(`player score: ${playerScore}`)
+    console.log(`player score: ${playerScore}`) */
   }; // End of newGame() function
-  
+
 // Game starts when the user clicks an image, adding the value of the object to the playerScore
   newGame()
 
@@ -63,29 +61,29 @@ $(document).ready(function(){
       $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
-  
+
 // Flower
   $('#powerUp2').click(function() {
     playerScore = playerScore + flower
       $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
-  
+
 // Leaf
   $('#powerUp3').click(function() {
     playerScore = playerScore + leaf
       $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
-  
+
 // Star
   $('#powerUp4').click(function() {
     playerScore = playerScore + star
       $('#playerScoreDiv').html(`Your score: ${playerScore}`);
       checkWin()
   })
-  
-// Win-Loss  
+
+// Win-Loss
   function checkWin() {
     if (playerScore === targetNum) {
       alert('You won!');
@@ -101,4 +99,3 @@ $(document).ready(function(){
   } // End of checkWin() function 
 
 }) // End of $(document).ready(function()
- 
